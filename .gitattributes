@@ -1,0 +1,21 @@
+# Normalise text files; web assets always use LF so diffs stay clean
+* text=auto
+
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Snapshots are plain JSON — let GitHub show diffs and language stats
+*.sqt.json linguist-language=JSON
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

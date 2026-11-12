@@ -1,0 +1,240 @@
+{
+  "format": "sqt-workspace",
+  "version": 1,
+  "exportedAt": "2026-11-12T09:12:00.000Z",
+  "generator": "Software Quality Toolkit / repository example (fictional data)",
+  "checksum": "e44a263e",
+  "stats": {
+    "projects": 1,
+    "nodes": 3,
+    "records": 2
+  },
+  "workspace": {
+    "schemaVersion": 1,
+    "projects": [
+      {
+        "id": "demo-project",
+        "name": "Demo Quality Programme",
+        "code": "DEMO-000",
+        "owner": "Software Quality (Example)",
+        "updated": "12 Nov 2026",
+        "nodes": [
+          {
+            "id": "demo-cluster",
+            "type": "cluster",
+            "name": "Sample Cluster",
+            "children": [
+              {
+                "id": "demo-swc-1",
+                "type": "swc",
+                "name": "Sample Component A",
+                "children": [],
+                "data": {
+                  "basic": {
+                    "name": "Sample Component A",
+                    "code": "SWC-DEMO-001",
+                    "owner": "Demo Owner",
+                    "status": "Planning",
+                    "baseline": "v0.1.0 / 2026.11",
+                    "supplier": "Fictional Supplier / Demo Domain",
+                    "description": "Fictional software component used only to demonstrate the snapshot schema."
+                  },
+                  "plan": {
+                    "qualityOwner": "Quality Ops (Demo)",
+                    "targetSop": "2027 / SOP+0",
+                    "reviewCycle": "Bi-weekly",
+                    "coverage": ">= 80% statement coverage",
+                    "progress": 35,
+                    "deliverables": "Quality plan, test specification, review minutes."
+                  },
+                  "risk": {
+                    "level": "Medium",
+                    "probability": "Possible",
+                    "impact": "Moderate",
+                    "riskOwner": "Demo Risk Owner",
+                    "nextReview": "20 Nov 2026",
+                    "mitigation": "Weekly defect triage before each baseline freeze.",
+                    "notes": "Placeholder text — replace with your own assessment."
+                  }
+                }
+              },
+              {
+                "id": "demo-swc-2",
+                "type": "swc",
+                "name": "Sample Component B",
+                "children": [],
+                "data": {
+                  "basic": {
+                    "name": "Sample Component B",
+                    "code": "SWC-DEMO-002",
+                    "owner": "Demo Owner",
+                    "status": "Planning",
+                    "baseline": "v0.1.0 / 2026.11",
+                    "supplier": "Fictional Supplier / Demo Domain",
+                    "description": "Second fictional component. Nothing in this file refers to a real project."
+                  },
+                  "plan": {
+                    "qualityOwner": "Quality Ops (Demo)",
+                    "targetSop": "2027 / SOP+0",
+                    "reviewCycle": "Bi-weekly",
+                    "coverage": ">= 80% statement coverage",
+                    "progress": 10,
+                    "deliverables": "Quality plan, test specification, review minutes."
+                  },
+                  "risk": {
+                    "level": "Low",
+                    "probability": "Possible",
+                    "impact": "Moderate",
+                    "riskOwner": "Demo Risk Owner",
+                    "nextReview": "20 Nov 2026",
+                    "mitigation": "Weekly defect triage before each baseline freeze.",
+                    "notes": "Placeholder text — replace with your own assessment."
+                  }
+                }
+              }
+            ],
+            "data": {
+              "basic": {
+                "name": "Sample Cluster",
+                "code": "CL-DEMO-000",
+                "owner": "Demo Owner",
+                "status": "Planning",
+                "baseline": "v0.1.0 / 2026.11",
+                "supplier": "Fictional Supplier / Demo Domain",
+                "description": "Fictional grouping of software components sharing a release cadence."
+              },
+              "plan": {
+                "qualityOwner": "Quality Ops (Demo)",
+                "targetSop": "2027 / SOP+0",
+                "reviewCycle": "Bi-weekly",
+                "coverage": ">= 80% statement coverage",
+                "progress": 20,
+                "deliverables": "Quality plan, test specification, review minutes."
+              },
+              "risk": {
+                "level": "Low",
+                "probability": "Possible",
+                "impact": "Moderate",
+                "riskOwner": "Demo Risk Owner",
+                "nextReview": "20 Nov 2026",
+                "mitigation": "Weekly defect triage before each baseline freeze.",
+                "notes": "Placeholder text — replace with your own assessment."
+              }
+            }
+          }
+        ],
+        "activities": {
+          "demo-swc-1": [
+            {
+              "id": "kpi",
+              "color": "blue",
+              "title": "KPI Monitoring",
+              "icon": "chart",
+              "desc": "Track defect density, test coverage and change-request KPIs against the agreed thresholds.",
+              "status": "On track",
+              "statusClass": "st-ontrack",
+              "owner": "Quality Ops",
+              "due": "Weekly",
+              "tasks": [
+                "Defect density trend",
+                "Test coverage >= 80%",
+                "Open issue ageing",
+                "Change request volatility",
+                "KPI report sign-off"
+              ],
+              "done": [
+                true,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "id": "swa",
+              "color": "teal",
+              "title": "SWA Audit",
+              "icon": "shield",
+              "desc": "Software work product audit — checklist review, findings log and action item closure.",
+              "status": "In review",
+              "statusClass": "st-review",
+              "owner": "SWA Lead",
+              "due": "28 Nov 2026",
+              "tasks": [
+                "Audit checklist review",
+                "Work product sampling",
+                "Findings log",
+                "Action item closure",
+                "Audit report issued"
+              ],
+              "done": [
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "id": "ppa",
+              "color": "amber",
+              "title": "PPA Release",
+              "icon": "badge",
+              "desc": "Production Part Approval gate — evidence package, waivers, sign-off and baseline freeze.",
+              "status": "Pending",
+              "statusClass": "st-pending",
+              "owner": "Release Mgr",
+              "due": "12 Dec 2026",
+              "tasks": [
+                "Release evidence package",
+                "Open defect waivers",
+                "SQM sign-off",
+                "Baseline freeze",
+                "PPA approval granted"
+              ],
+              "done": [
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "log": [
+      {
+        "id": "demo-log-2",
+        "ts": "2026-11-12T09:12:00.000Z",
+        "by": "DEMO",
+        "action": "Information updated",
+        "project": "Demo Quality Programme",
+        "node": "Sample Component A",
+        "detail": "Quality Plan"
+      },
+      {
+        "id": "demo-log-1",
+        "ts": "2026-11-12T09:05:00.000Z",
+        "by": "DEMO",
+        "action": "Project created",
+        "project": "Demo Quality Programme",
+        "node": "—",
+        "detail": "DEMO-000 · owner Software Quality (Example)"
+      }
+    ],
+    "settings": {
+      "author": "DEMO"
+    },
+    "revision": 3,
+    "updatedAt": "2026-11-12T09:12:00.000Z",
+    "viewState": {
+      "activeProjectId": "demo-project",
+      "selectedNodeId": "demo-swc-1",
+      "expanded": [
+        "demo-cluster"
+      ]
+    }
+  }
+}

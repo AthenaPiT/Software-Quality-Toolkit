@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software Quality Toolkit</title>
+<link rel="icon" href="assets/sqt-logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════ HOME / ENTRY ══════════════════════════════ -->
+<section class="view view-home is-active" id="view-home">
+  <div class="home-bg" aria-hidden="true">
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-amber"></div>
+    <div class="glow glow-teal"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <header class="home-nav">
+    <div class="brand">
+      <img class="brand-mark" src="assets/sqt-logo.png" alt="SQT">
+      <div class="brand-text">
+        <strong>Software Quality Toolkit</strong>
+        <span>Quality Operations Workspace</span>
+      </div>
+    </div>
+    <div class="home-nav-right">
+      <span class="nav-pill"><i class="dot-live"></i> Framework v0.2</span>
+      <button class="btn btn-ghost btn-sm" id="home-data-btn">Data &amp; Records <i class="unsaved-dot" id="home-dirty-dot"></i></button>
+      <button class="btn btn-ghost btn-sm" id="home-open-btn">Open Workspace <span class="btn-arrow">&#8599;</span></button>
+      <div class="avatar" title="Quality Assurance">QA</div>
+    </div>
+  </header>
+
+  <main class="home-main">
+    <div class="hero">
+      <div class="eyebrow"><span class="eyebrow-rule"></span> SOFTWARE QUALITY, STRUCTURED</div>
+      <h1>One workspace for<br><em>every quality gate.</em></h1>
+      <p class="hero-sub">Organise clusters and SWCs, keep quality plans and risk assessments in sync, and drive KPI monitoring, SWA audits and PPA release &mdash; all in one place.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" id="add-project-btn"><span class="plus">+</span> Add Project</button>
+        <button class="btn btn-secondary btn-lg" id="hero-open-btn">Explore sample project</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>03</strong><span>Core modules</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>03</strong><span>Quality activities</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>01</strong><span>Shared source of truth</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <div class="visual-halo"></div>
+      <img class="hero-logo" src="assets/sqt-logo.png" alt="">
+      <div class="float-chip chip-a"><i class="chip-dot"></i><span>Structure</span><b>01</b></div>
+      <div class="float-chip chip-b"><i class="chip-dot"></i><span>Assess</span><b>02</b></div>
+      <div class="float-chip chip-c"><i class="chip-dot"></i><span>Release</span><b>03</b></div>
+    </div>
+  </main>
+
+  <section class="recent">
+    <div class="section-head">
+      <div><span class="col-index">WORKSPACE</span><h2>Recent Projects</h2></div>
+      <span class="muted-count" id="project-count"></span>
+    </div>
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+  <footer class="home-footer">
+    <div class="capabilities">
+      <span class="cap cap-blue"><i></i> Cluster / SWC tree</span>
+      <span class="cap cap-teal"><i></i> Plan &amp; risk</span>
+      <span class="cap cap-amber"><i></i> KPI / SWA / PPA</span>
+    </div>
+    <button class="link-muted" id="reset-btn">Reset sample data</button>
+  </footer>
+</section>
+
+<!-- ══════════════════════════════ WORKSPACE ══════════════════════════════ -->
+<section class="view view-workspace" id="view-workspace">
+  <header class="topbar">
+    <button class="icon-btn" id="back-btn" title="Back to projects" aria-label="Back to projects"></button>
+    <img class="topbar-mark" src="assets/sqt-logo.png" alt="SQT">
+    <div class="topbar-divider"></div>
+    <div class="topbar-title">
+      <span class="crumb">Projects&nbsp; /</span>
+      <strong id="topbar-project-name">&mdash;</strong>
+      <span class="proj-code" id="topbar-project-code"></span>
+    </div>
+    <div class="topbar-spacer"></div>
+    <button class="sync-pill sync-btn" id="topbar-data-btn" title="Open Data &amp; Records"><i class="dot-live" id="sync-dot"></i><span id="sync-label">Not backed up</span></button>
+    <button class="btn btn-outline btn-sm" id="topbar-add"><span class="plus">+</span> Cluster</button>
+    <div class="avatar" title="Quality Assurance">QA</div>
+  </header>
+
+  <div class="workspace-grid">
+
+    <!-- COLUMN 01 — PROJECT TREE -->
+    <aside class="col col-tree">
+      <div class="col-head">
+        <div><span class="col-index">01 / STRUCTURE</span><h2>Project Tree</h2></div>
+        <button class="icon-btn icon-btn-accent" id="add-cluster-btn" title="Add Cluster" aria-label="Add Cluster"></button>
+      </div>
+      <div class="tree-search">
+        <span class="search-ico"></span>
+        <input id="tree-filter" type="text" placeholder="Filter nodes..." autocomplete="off">
+      </div>
+      <div class="tree-scroll" id="tree-scroll">
+        <div class="tree" id="tree"></div>
+      </div>
+      <div class="col-foot"><span class="grip-hint"></span><span>Drag to reorder &middot; Drop on a node to nest</span></div>
+    </aside>
+
+    <!-- COLUMN 02 — NODE INFORMATION -->
+    <main class="col col-info">
+      <div class="col-head col-head-info">
+        <div><span class="col-index">02 / NODE DETAILS</span><h2>Information</h2></div>
+        <div id="info-head-actions"></div>
+      </div>
+      <div class="info-scroll" id="info-scroll"></div>
+    </main>
+
+    <!-- COLUMN 03 — QUALITY ACTIVITIES -->
+    <aside class="col col-activity">
+      <div class="col-head">
+        <div><span class="col-index">03 / EXECUTION</span><h2>Quality Activities</h2></div>
+        <span class="count-badge">3</span>
+      </div>
+      <div class="activity-scroll" id="activity-scroll"></div>
+      <div class="col-foot"><span class="foot-note">Activities are scoped to the selected node.</span></div>
+    </aside>
+
+  </div>
+</section>
+
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+<div id="overlay"></div>
+<div id="toast-stack"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

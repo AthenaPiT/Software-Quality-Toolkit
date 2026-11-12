@@ -1,0 +1,41 @@
+# ─────────────────────────────────────────────────────────────
+# Real project data — NEVER commit
+# The master copies of your work are .sqt.json snapshots and the
+# human-readable exports. They may contain project names, supplier
+# names, defect figures and risk assessments.
+# ─────────────────────────────────────────────────────────────
+*.sqt.json
+SQT_*.json
+SQT_*.md
+SQT_*.csv
+
+# The fictional sample snapshot is safe to keep in the repo.
+!examples/*.sqt.json
+
+# Local scratch, ad-hoc backups and exported report folders
+exports/
+scratch/
+backups/
+*.backup
+*.local.json
+*.log
+
+# ─────────────────────────────────────────────────────────────
+# OS / editor noise
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# ─────────────────────────────────────────────────────────────
+# Tooling (no build step today, but keep the door closed)
+# ─────────────────────────────────────────────────────────────
+node_modules/
+.env
+.env.*
+!.env.example
